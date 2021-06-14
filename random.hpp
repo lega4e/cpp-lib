@@ -22,16 +22,26 @@ namespace nvx
 typedef std::default_random_engine dre_t;
 
 template<typename T>
-using uidis_type = std::uniform_int_distribution<T>;
+using uidis_t = std::uniform_int_distribution<T>;
 
 template<typename T>
-using urdis_type = std::uniform_real_distribution<T>;
+using urdis_t = std::uniform_real_distribution<T>;
 
-typedef uidis_type<int> uidisI, disI;
-typedef uidis_type<long long> uidisLL, disLL;
-typedef urdis_type<float> urdisF, disF;
-typedef urdis_type<double> urdisD, disD;
+typedef uidis_t<int>       uidisI, disI;
+typedef uidis_t<long long> uidisLL, disLL;
+typedef urdis_t<float>     urdisF, disF;
+typedef urdis_t<double>    urdisD, disD;
 
+/*
+ * Почему-то первое значение, генерируемое dre
+ * всегда одно и то же независимо от семени
+ */
+inline dre_t create_dre()
+{
+	dre_t dre(time(0));
+	dre();
+	return dre;
+}
 
 
 
