@@ -19,7 +19,7 @@ namespace nvx
 
 
 
-typedef std::default_random_engine dre_type;
+typedef std::default_random_engine dre_t;
 
 template<typename T>
 using uidis_type = std::uniform_int_distribution<T>;
@@ -39,7 +39,7 @@ typedef urdis_type<double> urdisD, disD;
 
 }
 
-extern nvx::dre_type dre;
+extern nvx::dre_t dre;
 
 
 
