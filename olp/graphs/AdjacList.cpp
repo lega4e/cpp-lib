@@ -49,7 +49,7 @@
  *                      значащее, скольким вершинам смежно текущее,
  *                      далее идут номера этих смежных вершин
  *    * scan1...........см. выше
- *    * scan_matrix.....считывает граф, представленный в виде матрицы 
+ *    * scan_matrix.....считывает граф, представленный в виде матрицы
  *                      смежности: сначала n, затем, собственно, матрицу
  *                      размерности n*n
  *    * scan_riblist....читает из файла сначала два числа: кол-во вершин и
@@ -71,11 +71,11 @@ struct AdjacList
 {
 	// data-members
 	std::vector< std::vector<int> > ribs;
-	
 
 
-	
-	
+
+
+
 	// base
 	inline int n() const
 	{
@@ -109,11 +109,11 @@ struct AdjacList
 	{
 		return ribs[i];
 	}
-	
 
 
-	
-	
+
+
+
 	// scan, print
 	AdjacList &scan(FILE *file = stdin)
 	{

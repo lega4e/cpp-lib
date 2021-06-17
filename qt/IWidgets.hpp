@@ -26,7 +26,7 @@ namespace nvx
  * 		longstr_type...QTextEdit (longcstr_type)
  */
 
-typedef std::unordered_map< std::string, void * > iwidgets_type; 
+typedef std::unordered_map< std::string, void * > iwidgets_type;
 typedef struct { std::string s; } lstring;
 
 template<class Ostream>

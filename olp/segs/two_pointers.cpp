@@ -17,9 +17,9 @@ int main( int argc, char *argv[] )
 	int n;
 	int *aval, *bval;
 	int k;
-	
-	
-	
+
+
+
 	// input
 	scanf("%i%i", &n, &k);
 	aval = new int[n];
@@ -29,9 +29,9 @@ int main( int argc, char *argv[] )
 		scanf("%i", b);
 	for(auto b = bval, e = bval+n; b != e; ++b)
 		scanf("%i", b);
-	
-	
-	
+
+
+
 	// solve
 	sort(aval, aval+n);
 	sort(bval, bval+n);

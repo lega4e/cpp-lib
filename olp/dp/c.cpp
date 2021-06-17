@@ -21,7 +21,7 @@ int dp(int l, int r, vector<int>& memo)
 // main
 int main( int argc, char *argv[] )
 {
-	
+
 
 
 

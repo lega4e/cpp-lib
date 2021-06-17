@@ -46,16 +46,16 @@ int solve(int pos, Segment const *segs, int n)
 // main
 int main( int argc, char *argv[] )
 {
-	
+
 	int n;
 	Segment *segs;
 
 	// input segs
 	// ...
 
-	
 
-	// solve	
+
+	// solve
 
 
 

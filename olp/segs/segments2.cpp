@@ -37,7 +37,7 @@ struct Event
 // main
 int main( int argc, char *argv[] )
 {
-	
+
 	int n;
 	Segment *segs;
 	Event *events;
@@ -49,7 +49,7 @@ int main( int argc, char *argv[] )
 		scanf("%i", &b->l),
 		scanf("%i", &b->r);
 
-	
+
 
 	// prepare
 	events = new Event[n*2];
@@ -65,9 +65,9 @@ int main( int argc, char *argv[] )
 			return true;
 		return lhs.type == 'b';
 	});
-	
-	
-	
+
+
+
 	// solve
 	llong res = 0;
 	llong amax = 0;
@@ -79,9 +79,9 @@ int main( int argc, char *argv[] )
 		else
 			--res;
 	}
-	
-	
-	
+
+
+
 	// output
 	printf("%i\n", res);
 

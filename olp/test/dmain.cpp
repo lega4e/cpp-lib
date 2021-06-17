@@ -66,7 +66,7 @@ typedef struct
 
 
 /*
- * Представляет из себя прямую, заданную 
+ * Представляет из себя прямую, заданную
  * уравнением: a*x + b*y = c
  */
 typedef struct
@@ -384,8 +384,8 @@ int belong(
  *     int  const bc     = which_side(p, b, c);
  *     int  const ac     = which_side(p, a, c);
  *     bool const onside = !ab or !bc or !ac;
- * 
- *     return 
+ *
+ *     return
  *         ( !ab or ab == which_side(c, a, b) ) and
  *         ( !bc or bc == which_side(a, b, c) ) and
  *         ( !ac or ac == which_side(b, a, c) ) ?

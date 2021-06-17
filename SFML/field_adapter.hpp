@@ -15,25 +15,25 @@
 
 namespace nvx
 {
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 struct SquareFieldTag {};
 struct HexagonFieldTag {};
 
 /*
- * Printer — это класс, который должен содержать следующие 
+ * Printer — это класс, который должен содержать следующие
  * функции:
  * 	setPosition( PointF ); — установить позицию,
  * 		устанавливается притом центр, где должно быть
  * 		напечатана фигура
  * 	setSideSize( float ); — установить размер стороны: для
  * 		квадрата — это, собственно, размер его стороны;
- * 		для шестиугольника — это радиус описанной 
+ * 		для шестиугольника — это радиус описанной
  * 		окружности
  * 	set( value_type ); — установить значение, из которого
  * 		должен определяться вид напечатанного
@@ -42,7 +42,7 @@ struct HexagonFieldTag {};
 template<class FieldType, class Printer, class FieldTag = SquareFieldTag>
 class FieldAdapter: public sf::Transformable, public sf::Drawable
 {
-public:	
+public:
 	// types
 	typedef FieldTag field_tag;
 	typedef typename FieldType::value_type value_type;
@@ -50,21 +50,21 @@ public:
 	typedef std::shared_ptr<field_type> fieldptr_type;
 	typedef Printer printer_type;
 	typedef std::shared_ptr<printer_type> printerptr_type;
-	
-	
-	
-	
-	
+
+
+
+
+
 	// create
 	FieldAdapter(
 		fieldptr_type field = nullptr,
 		PointF size = {400.0f, 200.0f}
 	);
-	
-	
-	
-	
-	
+
+
+
+
+
 	// core
 	FieldAdapter &update();
 
@@ -75,21 +75,21 @@ public:
 		sf::RenderTarget &target,
 		sf::RenderStates states = sf::RenderStates::Default
 	) const override;
-	
-	
-	
-	
+
+
+
+
 	// set, get
 		// field
 	FieldAdapter &setField(fieldptr_type newfield);
 	fieldptr_type getField() const;
-	
+
 
 		// printer
 	FieldAdapter &setPrinter(printerptr_type newprinter);
 	printerptr_type getPrinter() const;
-	
-	
+
+
 		// size
 	FieldAdapter &setSize(PointF size);
 	PointF getSize() const;

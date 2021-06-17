@@ -38,18 +38,18 @@ public:
 //	QHBoxLayout *sizelay = new QHBoxLayout;
 	QFormLayout *elemlay = new QFormLayout;
 //	QVBoxLayout *layout  = new QVBoxLayout;
-	
+
 	std::vector<QWidget *> widgets;
 	std::function<std::string(int i)> elemlabelgen =
-		[](int i) { return "(" + std::to_string(i+1) + ")"; }; 
-	
-	
+		[](int i) { return "(" + std::to_string(i+1) + ")"; };
+
+
 	/*
 	 * core
 	 */
 	QEditVector(Type type = int_type, QWidget *parent = nullptr);
 	void resize(int newsize);
-	
+
 	std::function<QWidget *(int)> createNewWidget;
 };
 

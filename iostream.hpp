@@ -127,11 +127,11 @@ Ostream &print(
  * {
  *         if(!n)
  *                 return os;
- * 
+ *
  *         os << a[0];
  *         for(auto *b = a+1, *e = a+n; b != e; ++b)
  *                 os << term << *b;
- * 
+ *
  *         return os;
  * }
  */
@@ -178,9 +178,9 @@ Ostream &print(
 
 
 	// for array
-template<class Ostream, typename T, typename SizeType = int>
+template<class Ostream, typename T>
 Ostream &print(
-	Ostream &os, T const *arr, SizeType len,
+	Ostream &os, T const *arr, int len,
 	std::string const &term = ", "
 )
 {

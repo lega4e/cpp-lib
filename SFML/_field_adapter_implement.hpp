@@ -81,7 +81,7 @@ FieldAdapter<FieldType, Printer, FieldTag>::setField(
 }
 
 template<class FieldType, class Printer, class FieldTag>
-typename FieldAdapter<FieldType, Printer, FieldTag>::fieldptr_type 
+typename FieldAdapter<FieldType, Printer, FieldTag>::fieldptr_type
 FieldAdapter<FieldType, Printer, FieldTag>::getField() const
 {
 	return field_;
@@ -147,7 +147,7 @@ FieldAdapter<FieldType, Printer, FieldTag>::setDrawGridEnable(bool enable)
 }
 
 template<class FieldType, class Printer, class FieldTag>
-bool 
+bool
 FieldAdapter<FieldType, Printer, FieldTag>::getDrawGridEnable() const
 {
 	return drawgrid_;
@@ -165,7 +165,7 @@ FieldAdapter<FieldType, Printer, FieldTag>::setGridThickness(float newthick)
 }
 
 template<class FieldType, class Printer, class FieldTag>
-float 
+float
 FieldAdapter<FieldType, Printer, FieldTag>::getGridThickness() const
 {
 	return gridthick_;
@@ -291,11 +291,11 @@ inline void FieldAdapter<FieldType, Printer, FieldTag>::SquareImplement::draw_gr
 
 	return;
 }
-	
-	
-	
-	
-	
+
+
+
+
+
 	// hexagon
 template<class FieldType, class Printer, class FieldTag>
 inline PointI

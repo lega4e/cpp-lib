@@ -53,7 +53,7 @@ public:
 	int get();
 	void unget();
 
-	template<typename T> 
+	template<typename T>
 	LayerIfstream &operator>>(T &val)
 	{
 		while(!empty())

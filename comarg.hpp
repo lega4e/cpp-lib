@@ -27,7 +27,7 @@ inline long _arg(char *s, long def = 0)
 	long res = strtol(s, &e, 10);
 	return e == s ? def : res;
 }
-	
+
 inline long long _arg(char *s, long long def = 0)
 {
 	char *e;

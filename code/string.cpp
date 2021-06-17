@@ -25,7 +25,7 @@ int count_symbols(std::string const &s)
 	int syms = 0;
 	for(int i = 0, bytes; i < (int)s.size(); ++i, ++syms)
 	{
-		bytes = 
+		bytes =
 			!(s[i] & (1 << 7)) ? 1 :
 			!(s[i] & (1 << 5)) ? 2 :
 			!(s[i] & (1 << 4)) ? 3 : 4;
@@ -113,9 +113,9 @@ string format(const char *fmt, ...)
 	va_list args;
 	va_start(args, fmt);
 	vector<char> v(64);
-	
+
 	while (true)
-	{	
+	{
 		va_list args2;
 		va_copy(args2, args);
 		int res = vsnprintf(v.data(), v.size(), fmt, args2);

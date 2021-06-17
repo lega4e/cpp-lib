@@ -18,16 +18,16 @@ QEditVector::QEditVector(Type type, QWidget *parent) : QWidget(parent)
 //		sizeedit, (void (QSpinBox::*)(int))&QSpinBox::valueChanged,
 //		[&](int i) { resize(i); }
 //	);
-	
+
 //	layout->addLayout(elemlay);
 //	elemlay->setMargin(0);
 //	elemlay->setHorizontalSpacing(20);
 //	resize(3);
-	
+
 //	layout->addStretch(1);
-	
+
 //	setLayout(layout);
-	
+
 	setLayout(elemlay);
 	elemlay->addRow(sizelabel, sizeedit);
 	sizeedit->setFixedWidth(60);
@@ -35,14 +35,14 @@ QEditVector::QEditVector(Type type, QWidget *parent) : QWidget(parent)
 		sizeedit, (void (QSpinBox::*)(int))&QSpinBox::valueChanged,
 		[&](int i) { resize(i); }
 	);
-	
+
 	elemlay->setMargin(0);
 	elemlay->setHorizontalSpacing(20);
 	setLayout(elemlay);
-	
+
 	switch(type)
 	{
-	case int_type:	
+	case int_type:
 		createNewWidget =
 			[](int)->QSpinBox * {
 				auto *box = new QSpinBox;
@@ -52,7 +52,7 @@ QEditVector::QEditVector(Type type, QWidget *parent) : QWidget(parent)
 				return box;
 			};
 		break;
-		
+
 	case double_type:
 		createNewWidget =
 			[](int)->QDoubleSpinBox * {
@@ -64,7 +64,7 @@ QEditVector::QEditVector(Type type, QWidget *parent) : QWidget(parent)
 				return box;
 			};
 		break;
-		
+
 	case string_type:
 		createNewWidget =
 			[](int)->QLineEdit * {
@@ -73,9 +73,9 @@ QEditVector::QEditVector(Type type, QWidget *parent) : QWidget(parent)
 			};
 		break;
 	}
-	
+
 	resize(3);
-	
+
 	return;
 }
 
@@ -89,7 +89,7 @@ void QEditVector::resize(int newsize)
 
 	if(newsize == (int)widgets.size())
 		return;
-		
+
 	if(newsize < (int)widgets.size())
 	{
 		while((int)widgets.size() != newsize)
@@ -99,7 +99,7 @@ void QEditVector::resize(int newsize)
 		}
 		return;
 	}
-	
+
 	QWidget *widget;
 	while((int)widgets.size() != newsize)
 	{

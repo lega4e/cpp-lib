@@ -17,7 +17,7 @@ typedef struct
 
 
 /*
- * Представляет из себя прямую, заданную 
+ * Представляет из себя прямую, заданную
  * уравнением: a*x + b*y = c
  */
 typedef struct
@@ -114,7 +114,7 @@ inline ldouble dtor(ldouble degrees)
  */
 inline ldouble cos(Vector a, Vector b)
 {
-	return 
+	return
 		(ldouble)(a.x*b.x + a.y*b.y) /
 		( length(a) * length(b) );
 }
@@ -273,7 +273,7 @@ inline bool belongs(Point p, Point a, Point b)
 		p.x - std::max(a.x, b.x) < ALPHA &&
 
 		// y1 <= y <= y2
-		std::min(a.y, b.y) - p.y < ALPHA && 
+		std::min(a.y, b.y) - p.y < ALPHA &&
 		p.y - std::max(a.y, b.y) < ALPHA &&
 
 		// on a straight
@@ -310,7 +310,7 @@ int belongs(Point p, Point a, Point b, Point c)
 	int  const ac     = which_side(p, a, c);
 	bool const onside = !ab or !bc or !ac;
 
-	return 
+	return
 		( !ab or ab == which_side(c, a, b) ) and
 		( !bc or bc == which_side(a, b, c) ) and
 		( !ac or ac == which_side(b, a, c) ) ?
@@ -331,11 +331,11 @@ inline Straight parallel(Straight s, Point p)
 
 inline Straight perpend(Straight s, Point p)
 {
-	return 
+	return
 		fabs(s.a) < ALPHA ? Straight{ 1.0, 0.0, p.x } :
 		fabs(s.b) < ALPHA ? Straight{ 0.0, 1.0, p.y } :
 		Straight{
-			1.0, -(ldouble)s.a/s.b, 
+			1.0, -(ldouble)s.a/s.b,
 			p.x - (ldouble)s.a/s.b*p.y
 		};
 }

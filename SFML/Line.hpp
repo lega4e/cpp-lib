@@ -13,11 +13,11 @@
 
 namespace nvx
 {
-	
-	
-	
-	
-	
+
+
+
+
+
 // types
 typedef PointD Vector;
 
@@ -105,7 +105,7 @@ public:
 		target.draw(circle_, states);
 		return;
 	}
-	
+
 
 
 	Line &thick(float thickness)
@@ -127,7 +127,7 @@ public:
 	Line &pos(
 		PointD begin,
 		PointD end
-	) 
+	)
 	{
 		beg_ = begin;
 		end_ = end;

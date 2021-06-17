@@ -65,7 +65,7 @@ struct SortQueue
 			if((*b)(rhs, lhs))
 				return false;
 		}
-				
+
 		return false;
 	}
 
@@ -86,7 +86,7 @@ struct SortQueueCreator
 	> cmp_type;
 	typedef SortQueue<OperandType> sort_type;
 
-	
+
 
 	// members
 	std::unordered_map<key_type, cmp_type> cmps;

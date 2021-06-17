@@ -14,7 +14,7 @@ using namespace std;
 int main( int argc, char *argv[] )
 {
 	Point a, b, c, p;
-	cin >> 
+	cin >>
 		a.x >> a.y >>
 		b.x >> b.y >>
 		c.x >> c.y >>

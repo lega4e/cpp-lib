@@ -82,7 +82,7 @@ struct GcdDataGenerator
  * время в микросекундах
  */
 template<typename Algorithm, typename DataGenerator>
-std::vector<std::pair<int, double>> testing( 
+std::vector<std::pair<int, double>> testing(
 	Algorithm alg, DataGenerator gen,
 	int min, int max, int repeatc
 )

@@ -35,7 +35,7 @@
  *    начиная с единицы, а не с нуля
  *
  *    * scan............считывает сначала порядок матрицы, затем все
- *                      элементы; 
+ *                      элементы;
  *    * scannon.........сразу считывает все элемены; память для массива
  *                      должна быть выделенна заранее
  *    * scan_riblist....читает из файла сначала два числа: кол-во вершин и
@@ -103,9 +103,9 @@ struct AdjacMatrix_template
 	{
 		return d + i*n;
 	}
-	
-	
-	
+
+
+
 	// input, output
 	inline AdjacMatrix_template &scan(FILE *file = stdin)
 	{
@@ -114,7 +114,7 @@ struct AdjacMatrix_template
 		scannon(file);
 		return *this;
 	}
-	
+
 	AdjacMatrix_template &scannon(FILE *file = stdin)
 	{
 		int input;
@@ -180,7 +180,7 @@ struct AdjacMatrix_template
 	}
 
 
-	
+
 };
 
 

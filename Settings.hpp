@@ -23,7 +23,7 @@ class Settings
 public:
 	typedef std::function<void(Settings const &)> adjfun_type;
 	typedef std::unordered_map<std::string, std::any> container_type;
-	
+
 	Settings(adjfun_type adjfun = adjfun_type());
 	Settings(container_type const &cont, adjfun_type adjfun = adjfun_type());
 	~Settings();
@@ -48,12 +48,12 @@ public:
 
 	Settings &adjustFunction(adjfun_type adjfun);
 	adjfun_type adjustFunction() const;
-	
+
 	container_type &container()
 	{
 		return _values;
 	}
-	
+
 
 private:
 	Settings(Settings const &cp);

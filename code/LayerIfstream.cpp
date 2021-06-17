@@ -152,7 +152,7 @@ int LayerIfstream::get()
 		else
 			return EOF;
 	}
-	
+
 	if(usecin_)
 	{
 		int ch = cin.get();

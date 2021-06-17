@@ -28,18 +28,18 @@ struct Point
 {
 	// types
 	typedef T value_type;
-	
+
 
 
 
 
 	// data-members
 	value_type x, y;
-	
-	
-	
-	
-	
+
+
+
+
+
 	// methods
 	template<class P>
 	Point &operator=(P const &p)
@@ -48,8 +48,8 @@ struct Point
 		y = p.y;
 		return *this;
 	}
-	
-	
+
+
 	// conversion
 	template<class P>
 	inline operator P() const
@@ -389,7 +389,7 @@ inline Point<T> &operator/=(
 template<class Ostream, typename T>
 inline Ostream &operator<<(
 	Ostream &os,
-	Point<T> const &toprint 
+	Point<T> const &toprint
 )
 {
 	 return toprint.print(os);
@@ -401,7 +401,7 @@ inline Ostream &operator<<(
 
 
 
-// make 
+// make
 template<typename T = void, class C>
 inline auto makep(C const &from)
 {

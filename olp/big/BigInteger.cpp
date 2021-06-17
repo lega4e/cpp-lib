@@ -82,7 +82,7 @@ struct BigInteger
 			--n;
 		}
 
-		capacity = n / 4 + 
+		capacity = n / 4 +
 			( n % 4 == 0 ? 0 : 1 ) + addcap;
 		size = 0;
 		d = new unsigned short[ capacity ];
@@ -236,7 +236,7 @@ void addition(
 	}
 	target.reserve( lhs.size+1 );
 
-	
+
 	// process
 	unsigned long long temp;
 	unsigned int carry = 0;
@@ -302,7 +302,7 @@ void substraction(
 	// process
 	long long temp;
 	int carry = 0;
-	
+
 	for( unsigned int i = 0; i < rhs.size; ++i )
 	{
 		temp = lhs.d[i] - rhs.d[i] + carry;
@@ -383,7 +383,7 @@ void multiplication(
 	it += lhs.size-1;
 	target.size =
 		*it ? it-target.d+1 : it-target.d;
-	
+
 	return;
 }
 
@@ -399,17 +399,17 @@ void multiplication(
  * )
  * {
  *         std::vector< unsigned short > result;
- * 
+ *
  *         unsigned long long temp = 0;
  *         for(auto *b = lhs.d+lhs.size-1, *e = lhs.d-1; b != e; --b)
  *         {
  *                 temp += *b;
  *                 result.push_back( temp/rhs );
  *                 std::cout << "result.back(): " << result.back() << std::endl;
- * 
+ *
  *                 temp = ( *b - rhs*result.back() ) * BASE;
  *         }
- * 
+ *
  *         auto
  *                 beg = result.crbegin(),
  *                 end = result.crend();
@@ -417,9 +417,9 @@ void multiplication(
  *                 beg, end, target.d
  *         );
  *         target.size = result.size();
- * 
+ *
  *         return;
- * 
+ *
  * }
  */
 

@@ -17,11 +17,11 @@
 
 namespace nvx
 {
-	
-	
-	
-	
-	
+
+
+
+
+
 template<typename ValueType>
 struct Field
 {
@@ -87,7 +87,7 @@ private:
 		// at
 		inline value_type &operator*() const;
 		inline value_type *operator->() const;
-		
+
 		inline value_type *base() const;
 		inline PointI point() const;
 
@@ -106,12 +106,12 @@ private:
 		// создаёт новый итератор, который можно потом изменять:
 		// отправить, например, в функцию make_reverse_iterator;
 		// из этого итератора может выйти. Но создаётся новый! В
-		// цикле вызывать эту функцию для проверки дошёл ли до 
+		// цикле вызывать эту функцию для проверки дошёл ли до
 		// конца итератор - нельзя, используй для этого либо isend,
 		// либо iterendc
 		Iterator iterend() const;
 		static inline Iterator const &citerend();
-		
+
 
 
 	private:
@@ -154,12 +154,12 @@ public:
 	typedef Iterator<Simple, Simple> iterator_type;
 	typedef Iterator<Const, Simple> const_iterator_type;
 	typedef Iterator<Simple, TapeAt> iterator_tape_type;
-	typedef Iterator<Const, TapeAt> const_iterator_tape_type; 
-	
-	
-	
-	
-	
+	typedef Iterator<Const, TapeAt> const_iterator_tape_type;
+
+
+
+
+
 	// static const members
 	static constexpr int const OFFSET_COUNT = 8;
 	static constexpr int const OFFSET[OFFSET_COUNT][2] = {
@@ -167,10 +167,10 @@ public:
 		                       { 1, 0  }, //  0  1  2
 		                       { 1, 1  }, //  7  *  3
 		            { 0, 1  },            //  6  5  4
-		{ -1, 1  },                       // 
-		{ -1, 0  },                       // 
+		{ -1, 1  },                       //
+		{ -1, 0  },                       //
 	};
-	
+
 
 
 
@@ -178,11 +178,11 @@ public:
 	// data-members
 	int w = 0, h = 0;
 	value_type *d = nullptr;
-	
-	
-	
-	
-	
+
+
+
+
+
 	// init, free
 	inline Field &init();
 	inline Field &init(int width, int height);
@@ -244,7 +244,7 @@ public:
 
 
 
-	// get 
+	// get
 	inline void getxy(int i, int &x, int &y) const;
 	inline PointI getxy(int i) const;
 
@@ -318,7 +318,7 @@ public:
 		Point const &p, int dir
 	) const;
 
-		
+
 
 		// near tape at simple
 	inline value_type &neart(int x, int y, int dir);
@@ -372,13 +372,13 @@ public:
 		// for line
 	inline value_type *begin(int line);
 	inline value_type *end(int line);
-	
+
 	inline value_type const *begin(int line) const;
 	inline value_type const *end(int line) const;
 
 
 
-		// class-iterator 
+		// class-iterator
 			// simple
 	inline iterator_type iterator(
 		int left = 0, int top = 0,
@@ -423,7 +423,7 @@ public:
 
 
 
-};	
+};
 
 
 
@@ -731,7 +731,7 @@ Field<ValueType>::att(int x, int y)
 	return d[y*w+x];
 }
 
-	
+
 template<typename ValueType>
 inline typename Field<ValueType>::value_type const &
 Field<ValueType>::att(int x, int y) const
@@ -806,7 +806,7 @@ inline typename Field<ValueType>::value_type const
 	return at( p.x + OFFSET[dir][0], p.y + OFFSET[dir][1] );
 }
 
-	
+
 
 
 
@@ -877,7 +877,7 @@ Field<ValueType>::operator[](char n) const
 
 template<typename ValueType>
 inline typename Field<ValueType>::value_type *
-Field<ValueType>::operator[](char n) 
+Field<ValueType>::operator[](char n)
 {
 	return d + n*w;
 }
@@ -895,7 +895,7 @@ Field<ValueType>::operator[](int n) const
 
 template<typename ValueType>
 inline typename Field<ValueType>::value_type *
-Field<ValueType>::operator[](int n) 
+Field<ValueType>::operator[](int n)
 {
 	return d + n*w;
 }
@@ -913,7 +913,7 @@ Field<ValueType>::operator[](long n) const
 
 template<typename ValueType>
 inline typename Field<ValueType>::value_type *
-Field<ValueType>::operator[](long n) 
+Field<ValueType>::operator[](long n)
 {
 	return d + n*w;
 }
@@ -931,7 +931,7 @@ Field<ValueType>::operator[](long long n) const
 
 template<typename ValueType>
 inline typename Field<ValueType>::value_type *
-Field<ValueType>::operator[](long long n) 
+Field<ValueType>::operator[](long long n)
 {
 	return d + n*w;
 }
@@ -949,7 +949,7 @@ Field<ValueType>::operator[](Point const &p) const
 
 template<typename ValueType> template<class Point>
 inline typename Field<ValueType>::value_type &
-Field<ValueType>::operator[](Point const &p) 
+Field<ValueType>::operator[](Point const &p)
 {
 	return at(p);
 }
@@ -1194,11 +1194,11 @@ Field<ValueType>::Iterator<IsConst, TapeMode>::Iterator(
  *     fd = rhs.fd;
  *     return *this;
  * }
- * 
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
+ *
  * // move
  * template<typename ValueType>
  * template<class IsConst, class TapeMode>
@@ -1208,7 +1208,7 @@ Field<ValueType>::Iterator<IsConst, TapeMode>::Iterator(
  *     plusplus(TapeMode());
  *     return *this;
  * }
- * 
+ *
  * template<typename ValueType>
  * template<class IsConst, class TapeMode>
  * Field<ValueType>::Iterator<IsConst, TapeMode>
@@ -1218,31 +1218,31 @@ Field<ValueType>::Iterator<IsConst, TapeMode>::Iterator(
  *     operator++();
  *     return athis;
  * }
- * 
- * 
- * 
+ *
+ *
+ *
  * template<typename ValueType>
  * template<class IsConst, class TapeMode>
  * Field<ValueType>::Iterator<IsConst, TapeMode> &
  * Field<ValueType>::Iterator<IsConst, TapeMode>::operator--()
  * {
- * 
+ *
  *     minusminus(TapeMode());
  *     return *this;
  * }
- * 
+ *
  * template<typename ValueType>
  * template<class IsConst, class TapeMode>
- * inline Field<ValueType>::Iterator<IsConst, TapeMode> 
+ * inline Field<ValueType>::Iterator<IsConst, TapeMode>
  * Field<ValueType>::Iterator<IsConst, TapeMode>::operator--(int)
  * {
  *     auto cp = *this;
  *     operator--();
  *     return cp;
  * }
- * 
- * 
- * 
+ *
+ *
+ *
  * template<typename ValueType>
  * template<class IsConst, class TapeMode>
  * Field<ValueType>::Iterator<IsConst, TapeMode> &
@@ -1252,7 +1252,7 @@ Field<ValueType>::Iterator<IsConst, TapeMode>::Iterator(
  *     d += fw;
  *     return *this;
  * }
- * 
+ *
  * template<typename ValueType>
  * template<class IsConst, class TapeMode>
  * Field<ValueType>::Iterator<IsConst, TapeMode> &
@@ -1262,9 +1262,9 @@ Field<ValueType>::Iterator<IsConst, TapeMode>::Iterator(
  *     d += fw*n;
  *     return *this;
  * }
- * 
- * 
- * 
+ *
+ *
+ *
  * template<typename ValueType>
  * template<class IsConst, class TapeMode>
  * Field<ValueType>::Iterator<IsConst, TapeMode> &
@@ -1274,7 +1274,7 @@ Field<ValueType>::Iterator<IsConst, TapeMode>::Iterator(
  *     d -= fw;
  *     return *this;
  * }
- * 
+ *
  * template<typename ValueType>
  * template<class IsConst, class TapeMode>
  * Field<ValueType>::Iterator<IsConst, TapeMode> &
@@ -1341,7 +1341,7 @@ bool Field<ValueType>::Iterator<IsConst, TapeMode>::operator==(
 		return rhs.d ?
 			x == rhs.x && y == rhs.y :
 			isend();
-	return rhs.d ? 
+	return rhs.d ?
 		rhs.isend() :
 		true;
 }
@@ -1384,7 +1384,7 @@ inline bool Field<ValueType>::Iterator<IsConst, TapeMode>::isend() const
  *     e.y = top+height;
  *     return e;
  * }
- * 
+ *
  * template<typename ValueType>
  * template<class IsConst, class TapeMode>
  * Field<ValueType>::Iterator<IsConst, TapeMode> const &
@@ -1393,13 +1393,13 @@ inline bool Field<ValueType>::Iterator<IsConst, TapeMode>::isend() const
  *     static Iterator const singleton = create_iterend();
  *     return singleton;
  * }
- * 
- * 
- * 
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  * // private
  *     // static
  * template<typename ValueType>
@@ -1480,7 +1480,7 @@ inline void Field<ValueType>::Iterator<IsConst, TapeMode>::minusminus(Simple)
 		--y;
 	}
 	d = fd + x + y*fw;
-	
+
 	return;
 }
 
@@ -1494,7 +1494,7 @@ inline void Field<ValueType>::Iterator<IsConst, TapeMode>::minusminus(TapeAt)
 		--y;
 	}
 	d = fd + mod(x, fw) + mod(y, fh)*fw;
-	
+
 	return;
 }
 

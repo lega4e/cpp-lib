@@ -21,7 +21,7 @@ sf::Color tocolor(std::string const &s)
 
 	switch(s.size())
 	{
-	case 1:	
+	case 1:
 	  {
 		int tmp = hex2dec(s[0]);
 		tmp = tmp * 16 + tmp;

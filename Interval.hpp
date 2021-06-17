@@ -29,7 +29,7 @@ template<typename T>
 struct Interval
 {
 	typedef T value_type;
-	
+
 	T min = T(), max = T();
 
 	/*

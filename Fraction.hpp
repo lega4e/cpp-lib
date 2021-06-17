@@ -29,11 +29,11 @@ struct Fraction
 
 	// data-members
 	value_type a = 0, b = 1;
-	
-	
-	
-	
-	
+
+
+
+
+
 	// creation
 	Fraction(): a(0), b(1) {}
 	Fraction(value_type a): a(a), b(1) {}
@@ -44,14 +44,14 @@ struct Fraction
 		if(f != f)
 			a = 0, b = 0;
 		else
-			a = f, b = 1; 
+			a = f, b = 1;
 		return;
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	// is-functions
 	inline bool isNaN() const
 	{
@@ -108,7 +108,7 @@ struct Fraction
 		const_cast<Fraction &>(*this).reduce();
 		return *this;
 	}
-	
+
 	inline Fraction &reduce()
 	{
 		auto g = gcd(abs(a), b);
@@ -358,7 +358,7 @@ inline Fraction<T> operator-(Fraction<T> const &lhs)
 
 
 template<typename T, typename U>
-inline Fraction<decltype(T()*U())> 
+inline Fraction<decltype(T()*U())>
 operator+(
 	Fraction<T> const &lhs,
 	Fraction<U> const &rhs
@@ -375,7 +375,7 @@ operator+(
 
 
 template<typename T, typename U>
-inline Fraction<decltype(T()*U())> 
+inline Fraction<decltype(T()*U())>
 operator-(
 	Fraction<T> const &lhs,
 	Fraction<U> const &rhs
@@ -392,7 +392,7 @@ operator-(
 
 
 template<typename T, typename U>
-inline Fraction<decltype(T()*U())> 
+inline Fraction<decltype(T()*U())>
 operator*(
 	Fraction<T> const &lhs,
 	Fraction<U> const &rhs
@@ -408,7 +408,7 @@ operator*(
 
 
 template<typename T, typename U>
-Fraction<decltype(T()*U())> 
+Fraction<decltype(T()*U())>
 operator/(
 	Fraction<T> const &lhs,
 	Fraction<U> const &rhs

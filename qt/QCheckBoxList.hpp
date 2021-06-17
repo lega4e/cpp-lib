@@ -12,7 +12,7 @@
 
 
 namespace nvx
-{ 
+{
 
 
 
@@ -31,11 +31,11 @@ public:
 		std::vector<std::pair<std::string, bool>> const &labels,
 		QWidget *parent = nullptr
 	);
-	
+
 	void set(std::vector<std::string> const &labels);
 	void set(std::vector<std::pair<std::string, bool>> const &labels);
-	
-	
+
+
 };
 
 

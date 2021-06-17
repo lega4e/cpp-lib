@@ -300,7 +300,7 @@ Field<ValueType>::att(int x, int y)
 	return d[y*w+x];
 }
 
-	
+
 template<typename ValueType>
 inline typename Field<ValueType>::value_type const &
 Field<ValueType>::att(int x, int y) const
@@ -375,7 +375,7 @@ inline typename Field<ValueType>::value_type const
 	return at( p.x + OFFSET[dir][0], p.y + OFFSET[dir][1] );
 }
 
-	
+
 
 
 
@@ -446,7 +446,7 @@ Field<ValueType>::operator[](char n) const
 
 template<typename ValueType>
 inline typename Field<ValueType>::value_type *
-Field<ValueType>::operator[](char n) 
+Field<ValueType>::operator[](char n)
 {
 	return d + n*w;
 }
@@ -464,7 +464,7 @@ Field<ValueType>::operator[](int n) const
 
 template<typename ValueType>
 inline typename Field<ValueType>::value_type *
-Field<ValueType>::operator[](int n) 
+Field<ValueType>::operator[](int n)
 {
 	return d + n*w;
 }
@@ -482,7 +482,7 @@ Field<ValueType>::operator[](long n) const
 
 template<typename ValueType>
 inline typename Field<ValueType>::value_type *
-Field<ValueType>::operator[](long n) 
+Field<ValueType>::operator[](long n)
 {
 	return d + n*w;
 }
@@ -500,7 +500,7 @@ Field<ValueType>::operator[](long long n) const
 
 template<typename ValueType>
 inline typename Field<ValueType>::value_type *
-Field<ValueType>::operator[](long long n) 
+Field<ValueType>::operator[](long long n)
 {
 	return d + n*w;
 }
@@ -518,7 +518,7 @@ Field<ValueType>::operator[](Point const &p) const
 
 template<typename ValueType> template<class Point>
 inline typename Field<ValueType>::value_type &
-Field<ValueType>::operator[](Point const &p) 
+Field<ValueType>::operator[](Point const &p)
 {
 	return at(p);
 }
@@ -801,7 +801,7 @@ Field<ValueType>::Iterator<IsConst, TapeMode>::operator--()
 
 template<typename ValueType>
 template<class IsConst, class TapeMode>
-inline Field<ValueType>::Iterator<IsConst, TapeMode> 
+inline Field<ValueType>::Iterator<IsConst, TapeMode>
 Field<ValueType>::Iterator<IsConst, TapeMode>::operator--(int)
 {
 	auto cp = *this;
@@ -908,7 +908,7 @@ bool Field<ValueType>::Iterator<IsConst, TapeMode>::operator==(
 		return rhs.d ?
 			x == rhs.x && y == rhs.y :
 			isend();
-	return rhs.d ? 
+	return rhs.d ?
 		rhs.isend() :
 		true;
 }
@@ -1045,7 +1045,7 @@ inline void Field<ValueType>::Iterator<IsConst, TapeMode>::minusminus(Simple)
 		--y;
 	}
 	d = fd + x + y*fw;
-	
+
 	return;
 }
 
@@ -1059,7 +1059,7 @@ inline void Field<ValueType>::Iterator<IsConst, TapeMode>::minusminus(TapeAt)
 		--y;
 	}
 	d = fd + mod(x, fw) + mod(y, fh)*fw;
-	
+
 	return;
 }
 
